@@ -56,7 +56,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("Search bar did begin editing...")
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("Search bad did end editing...")
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
          search(shouldShow: false)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Search text is \(searchText)")
     }
 }
